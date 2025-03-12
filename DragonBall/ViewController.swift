@@ -7,12 +7,24 @@
 
 import UIKit
 
+protocol MyViewDelegate: AnyObject {
+    func navigateToNewViewController(viewController: UIViewController)
+}
+
 class ViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
     }
+    
+//    func navigateToNewViewController(viewController: UIViewController) {
+//        self.navigationController?.pushViewController(viewController, animated: true)
+//    }
 
 
 }

@@ -19,6 +19,8 @@ class LoginView: UIView {
     
     
     
+    
+    
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         guard let email = emailText  else {
             print("Please enter an email")
@@ -34,17 +36,25 @@ class LoginView: UIView {
             DispatchQueue.main.async {
                 self?.loginButton.tintColor = success ? .dbOrange : .dbBlue
                 print(success)
+                
+                if success {
+                    let heroView = HeroesTableViewController()
+                    
+                }
             }
             
         }
     }
     
     required init?(coder: NSCoder) {
+        //fatalError("init(coder:) has not been implemented")
         super.init(coder: coder)
         viewInit()
     }
     
-    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
     
     
     func viewInit() {
