@@ -22,15 +22,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//        
-//        let window = UIWindow(windowScene: windowScene)
-//        
-//        let initialView = LoginViewController()
-//        
-//        window.rootViewController = initialView
-//        window.makeKeyAndVisible()
-//        self.window = window
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let window = UIWindow(windowScene: windowScene)
+        
+        let initialView = LoginViewXController(nibName: "LoginView", bundle: nil)
+        let navController = UINavigationController(rootViewController: initialView)
+        
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
