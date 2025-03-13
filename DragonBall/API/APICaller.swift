@@ -65,6 +65,7 @@ class APICaller {
                             
                             completion(.success(result))
                             
+                            
                         } catch {
                             completion(.failure(APIError.couldNotDecodeData))
                         }
@@ -94,4 +95,6 @@ class APICaller {
                 completion(request)
             }
         }
+    
+    
 }
