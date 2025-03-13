@@ -72,6 +72,17 @@ class AuthManager {
             
         }
         
+        
+        
         task.resume()
+    }
+    
+    //Returns the token if there is any
+    func withValidToken(completion: @escaping (String) -> Void) {
+        guard let token = token else {
+            return
+        }
+        
+        completion(token)
     }
 }

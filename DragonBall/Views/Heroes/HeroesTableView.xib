@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroesTableViewController" customModule="DragonBall" customModuleProvider="target">
             <connections>
+                <outlet property="heroTable" destination="Gmb-Ag-V2c" id="V9v-jR-lAz"/>
                 <outlet property="view" destination="5Ou-44-0IW" id="m2h-it-ekh"/>
             </connections>
         </placeholder>
@@ -17,19 +18,22 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="DBWallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jZA-lx-w9z">
-                    <rect key="frame" x="-300" y="-363" width="880" height="1912"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="DBWallpaper.jpg" id="jZA-lx-w9z">
+                    <rect key="frame" x="-322" y="0.0" width="880" height="1912"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybU-Uc-mQ7">
-                    <rect key="frame" x="159" y="409" width="75" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gmb-Ag-V2c">
+                    <rect key="frame" x="10" y="119" width="373" height="679"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="X3R-N5-VvY"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Gmb-Ag-V2c" firstAttribute="top" secondItem="X3R-N5-VvY" secondAttribute="top" constant="60" id="VEm-ha-hGm"/>
+                <constraint firstItem="Gmb-Ag-V2c" firstAttribute="leading" secondItem="X3R-N5-VvY" secondAttribute="leading" constant="10" id="WSv-o1-1R4"/>
+                <constraint firstItem="X3R-N5-VvY" firstAttribute="bottom" secondItem="Gmb-Ag-V2c" secondAttribute="bottom" constant="20" id="bpM-uo-Q4N"/>
+                <constraint firstItem="X3R-N5-VvY" firstAttribute="trailing" secondItem="Gmb-Ag-V2c" secondAttribute="trailing" constant="10" id="kyN-A3-Whl"/>
+            </constraints>
             <point key="canvasLocation" x="-60" y="-627"/>
         </view>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
