@@ -31,7 +31,7 @@
                     <rect key="frame" x="16.666666666666657" y="319" width="360" height="350"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqd-uP-l6n">
-                            <rect key="frame" x="0.0" y="0.0" width="360" height="300"/>
+                            <rect key="frame" x="0.0" y="0.0" width="360" height="24"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hero Description" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ail-Hn-qyj">
                                     <rect key="frame" x="0.0" y="0.0" width="360" height="24"/>
@@ -45,8 +45,8 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="ail-Hn-qyj" secondAttribute="bottom" constant="276" id="Hoz-1C-fGE"/>
                                 <constraint firstItem="ail-Hn-qyj" firstAttribute="centerX" secondItem="eqd-uP-l6n" secondAttribute="centerX" id="JKu-Uq-2yZ"/>
+                                <constraint firstItem="ail-Hn-qyj" firstAttribute="centerY" secondItem="eqd-uP-l6n" secondAttribute="centerY" id="K7V-sD-PAc"/>
                                 <constraint firstItem="ail-Hn-qyj" firstAttribute="top" secondItem="eqd-uP-l6n" secondAttribute="top" id="cXC-0e-VvO"/>
                                 <constraint firstAttribute="width" constant="360" id="tIa-yJ-nA3"/>
                             </constraints>
