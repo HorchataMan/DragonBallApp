@@ -95,7 +95,16 @@ class HeroesTableViewController: UIViewController, UITableViewDataSource, UITabl
         
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        heroTable.deselectRow(at: indexPath, animated: true)
+        
+        let selectedHero = self.heroDB[indexPath.row]
+        
+        let descriptionView = HeroDescriptionViewController(nibName: "HeroDescriptionView", bundle: nil)
+        descriptionView.heroData = selectedHero
+        self.navigationController?.pushViewController(descriptionView, animated: true)
+        
+    }
 
 
 }

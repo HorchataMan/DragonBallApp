@@ -28,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let initialView = LoginViewXController(nibName: "LoginView", bundle: nil)
         let navController = UINavigationController(rootViewController: initialView)
+        navController.navigationBar.tintColor = .dbOrange
         
         window.rootViewController = navController
         window.makeKeyAndVisible()

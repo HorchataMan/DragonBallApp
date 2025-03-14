@@ -23,7 +23,7 @@
                     <rect key="frame" x="-322" y="0.0" width="880" height="1912"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gmb-Ag-V2c">
+                <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gmb-Ag-V2c">
                     <rect key="frame" x="10" y="119" width="373" height="679"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="separatorColor" name="DBBlue"/>
