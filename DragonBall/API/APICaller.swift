@@ -73,7 +73,55 @@ class APICaller {
                     
                     task.resume()
                     
-                } //Here ends the create request
+                } //Here ends the get heroes request
+    }
+    
+    func getTransformations(
+        _ heroID: String = "",
+        completion: @escaping (Result<[Transformation], Error>) -> Void) {
+        
+            createRequest(
+                with: URL(string: Constants.server + "api/heros/tranformations"),
+                type: .POST) { request in
+                    
+                    var newRequest = request
+                    //Create the body for the request
+                    let bodyString = """
+                                    {
+                                        "id": "\(heroID)"
+                                    }
+                                    """
+                    let jsonBody = bodyString.data(using: .utf8)
+                    
+                    newRequest.httpBody = jsonBody
+                    
+                    
+                    let task = URLSession.shared.dataTask(with: newRequest) { data, response, error in
+                        guard let data = data, error == nil else {
+                            completion(.failure(APIError.couldNotFetchData))
+                            return
+                        }
+                        
+                        let response = response as? HTTPURLResponse
+                        print(response?.statusCode)
+                        
+                        //If it got the data proceed and decode it
+                        
+                        do {
+                            
+                            let result = try JSONDecoder().decode([Transformation].self, from: data)
+                            
+                            completion(.success(result))
+                            
+                            
+                        } catch {
+                            completion(.failure(APIError.couldNotDecodeData))
+                        }
+                    }
+                    
+                    task.resume()
+                    
+                } //Here ends the get heroes request
     }
     
     public func createRequest(

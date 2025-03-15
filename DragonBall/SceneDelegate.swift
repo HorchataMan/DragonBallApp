@@ -29,6 +29,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let initialView = LoginViewXController(nibName: "LoginView", bundle: nil)
         let navController = UINavigationController(rootViewController: initialView)
         navController.navigationBar.tintColor = .dbOrange
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = .clear
+        navController.navigationBar.scrollEdgeAppearance = appearance
+        navController.navigationBar.standardAppearance = appearance
         
         window.rootViewController = navController
         window.makeKeyAndVisible()
