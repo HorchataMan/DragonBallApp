@@ -30,7 +30,7 @@ class APICaller {
     
     func getHeroes(
         _ name: String = "",
-        completion: @escaping (Result<[Hero], Error>) -> Void) {
+        completion: @escaping (Result<[Hero], APIError>) -> Void) {
         
             createRequest(
                 with: URL(string: Constants.server + "api/heros/all"),
@@ -78,7 +78,7 @@ class APICaller {
     
     func getTransformations(
         _ heroID: String = "",
-        completion: @escaping (Result<[Transformation], Error>) -> Void) {
+        completion: @escaping (Result<[Transformation], APIError>) -> Void) {
         
             createRequest(
                 with: URL(string: Constants.server + "api/heros/tranformations"),

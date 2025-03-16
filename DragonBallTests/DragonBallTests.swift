@@ -10,27 +10,80 @@ import XCTest
 
 final class DragonBallTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    
+    
+    override func setUp() {
+        super.setUp()
+        
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_login(){
+        
+        
+        AuthManager.shared.login(user: "jancpetrina@gmail.com", password: "Spiderman1") { success in
+            //Tests for an actual login
+            XCTAssertEqual(success, true)
+            
         }
+        
+        
+        
+        AuthManager.shared.login(user: "wronguser", password: "wrongpassword") { success in
+            //Tests for an incorrect login
+            XCTAssertEqual(success, false)
+        }
+        
+        
+    }
+    
+    func test_getHeroName(){
+        let heroToGet = "Goku"
+        
+        //Test to find a hero by name
+        
+        APICaller.shared.getHeroes(heroToGet) {result in
+            switch result {
+            case .success(let hero):
+                XCTAssertEqual(hero.first?.name, "Goku")
+            case .failure(let error):
+                print(error.localizedDescription)
+                XCTAssertThrowsError(APICaller.APIError.couldNotFetchData)
+            }
+            
+        }
+    }
+    
+    func test_getTransformations(){
+        
+        //If the character has transformations should return true
+        //this is tested with goku
+        APICaller.shared.getTransformations("D13A40E5-4418-4223-9CE6-D2F9A28EBE94") {
+            result in
+            
+            switch result {
+            case .success(let transformations):
+                XCTAssertTrue(!transformations.isEmpty)
+            case .failure(let error):
+                print(error.localizedDescription)
+                XCTAssertThrowsError(APICaller.APIError.couldNotFetchData)
+            }
+        }
+        
+        //If the character has no transformations should return false
+        //This is tested with mr satan
+        APICaller.shared.getTransformations("1985A353-157F-4C0B-A789-FD5B4F8DABDB") {
+            result in
+            
+            switch result {
+            case .success(let transformations):
+                XCTAssertTrue(transformations.isEmpty)
+            case .failure(let error):
+                print(error.localizedDescription)
+                XCTAssertThrowsError(APICaller.APIError.couldNotFetchData)
+            }
+        }
+        
     }
 
 }
